@@ -29,6 +29,8 @@
 
 .contactDetailNameContainer {
   align-self: center;
+  padding: 0 24px;
+  max-width: 286px;
   color: #fff;
   display: 'flex';
   justify-content: center;
@@ -56,14 +58,45 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.btnRed {
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  border: 1px solid transparent;
+  border-color: #dc3545;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: #dc3545;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 .btnOutWhite:hover {
   color: #000;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
 }
 
+.btnRed:hover {
+  color: #fff;
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .btnOutWhite {
+    transition: none;
+  }
+  .btnRed {
     transition: none;
   }
 }
