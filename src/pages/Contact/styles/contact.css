@@ -1,0 +1,104 @@
+#Contact {
+  background-color: #fafafa;
+  border-radius: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -60px;
+  margin-bottom: 24px;
+  width: 464px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+}
+
+@media screen and (max-width: 512px) {
+  #Contact {
+    width: 85vw;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.contactCard {
+  border-bottom: thin solid #ddd; 
+  cursor: pointer;
+  display: flex;
+  border-radius: 0;
+  height: 80px;
+  padding: 16px 24px;
+  justify-content: space-between;
+  width: auto;
+  transition: .3s;
+}
+.contactCard:active {
+  background-color: #aaa;
+}
+.contactCard:hover {
+  background-color: #ddd;
+}
+.contactCard:first-child {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.contactCard:last-child {
+  border-bottom: 0;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.contactActionBtn {
+  align-self: center;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  margin-left: 16px;
+  padding: 8px; 
+  transition: .3s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.contactActionBtn:hover {
+  background-color: #ccc;
+}
+
+.contactActionBtn:active {
+  background-color: #aaa;
+}
+
+.contactAva {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 3rem;
+  padding: 3px;
+  border: 2px solid #0d6efd;
+}
+
+.contactAvaContainer {
+  align-self: center;
+  display: flex;
+  width: 60px;
+  transition: .3s;
+}
+
+@media screen and (max-width: 420px) {
+  .contactAvaContainer {
+    width: 48px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .contactAvaContainer {
+    width: 40px;
+  }
+}
+
+.contactInfoContainer {
+  display: inline-block;
+  align-self: center;
+  margin-left: 24px;
+  flex: 1;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  width: calc(100%); 
+}
