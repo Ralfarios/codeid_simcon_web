@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import Navbar from './components/layout/Navbar';
 import IndexRouter from './routers';
+import { path } from './routers/path';
 
 import './styles/app.css';
 
@@ -13,7 +14,10 @@ const App = () => {
   return (
     <HelmetProvider>
       <div id="App" style={!isNaN(Number(header))
-        ? { paddingBottom: 0 } : {}}>
+        ? { paddingBottom: 0 }
+        : pathname === path.e404
+          ? { paddingBottom: 0 }
+          : {}}>
         {/** LAYOUT */}
         <Navbar />
 
