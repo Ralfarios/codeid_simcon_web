@@ -12,7 +12,7 @@ const ContactEdit = () => {
   const dispatch: any = useDispatch();
   const history: any = useHistory();
   const { contactid }: any = useParams();
-  const { contact, isLoading } = useSelector((state: any) => state.contact);
+  const { contact } = useSelector((state: any) => state.contact);
   const handleSubmit = (e: any) => {
     e.preventDefault();
 

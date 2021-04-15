@@ -1,9 +1,24 @@
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
+import Swalert from '../../components/helper/Swal';
+
+import ContactAction from '../../utils/store/actions/contactAction';
+
 import './styles/contactAdd.css';
 
 const ContactAdd = () => {
-
+  const dispatch: any = useDispatch();
+  const history: any = useHistory();
   const handleSubmit = (e: any) => {
     e.preventDefault();
+
+    if (!e?.target?.firstName?.value) return Swalert.fire('Error!', 'Please fill the First Name!', 'error');
+    if (!e?.target?.lastName?.value) return Swalert.fire('Error!', 'Please fill the Last Name!', 'error');
+    if (!e?.target?.age?.value) return Swalert.fire('Error!', 'Please fill the Age!', 'error');
+    if (e?.target?.age?.value < 0 || e?.target?.age?.value > 100) return Swalert.fire('Error!', 'Age must be more than 0 and less than equal 100.', 'error');
+    if (!e?.target?.photo?.value) return e.target.photo.value = 'N/A';
+
     const value: any = {
       firstName: e?.target?.firstName?.value,
       lastName: e?.target?.lastName?.value,
@@ -11,7 +26,8 @@ const ContactAdd = () => {
       photo: e?.target?.photo?.value,
     };
 
-    return console.log(value);
+    dispatch(ContactAction.addContact(value));
+    return history.push(`/`);
   };
 
   return (
