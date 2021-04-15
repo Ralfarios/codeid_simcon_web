@@ -9,8 +9,8 @@ import MetaDecorator from '../../utils/helmet/MetaDecorator';
 import './styles/contact.css';
 
 const Contact = () => {
-  const dispatch = useDispatch();
-  const { contacts, isLoading } = useSelector((state: any) => state.contact);
+  const dispatch: any = useDispatch();
+  const { contacts, isLoading }: any = useSelector((state: any) => state.contact);
 
   useEffect(() => {
     dispatch(ContactAction.getContact());

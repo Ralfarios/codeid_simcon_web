@@ -16,11 +16,12 @@ const contactReducer = (state: any = init, action: any) => {
     case 'ADD_CONTACT':
       return state;
     case 'DELETE_CONTACT':
-      return state;
+      let newContact = state.contacts.filter((e: any) => e.id !== action.payload);
+      return { ...state, contacts: newContact };
     case 'FETCH_CONTACT':
       return { ...state, contacts: action.payload, isLoading: false, errors: null };
     case 'FETCH_CONTACT_BY_ID':
-      return state;
+      return { ...state, contact: action.payload, isLoading: false, errors: null };
     case 'UPDATE_CONTACT':
       return state;
     default:
