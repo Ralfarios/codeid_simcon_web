@@ -23,3 +23,146 @@ button {
 button:focus:not(:focus-visible) {
   outline: 0;
 }
+
+.formInput {
+  display: flex;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .formInput {
+    transition: none;
+  }
+}
+
+.formInput:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.formInput::-webkit-date-and-time-value {
+  height: 1.5em;
+}
+.formInput::-moz-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.formInput::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.formInput:disabled, .formInput[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+
+.btnOutWhite {
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #f8f9fa;
+  border: 1px solid transparent;
+  border-color: #f8f9fa;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btnRed {
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  border: 1px solid transparent;
+  border-color: #dc3545;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: #dc3545;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btnBlue {
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  border: 1px solid transparent;
+  border-color: #0d6efd;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: #0d6efd;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  outline: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btnOutWhite:hover {
+  color: #000;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.btnRed:hover {
+  color: #fff;
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+
+.btnBlue:hover {
+  color: #fff;
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btnOutWhite {
+    transition: none;
+  }
+  .btnRed {
+    transition: none;
+  }
+  .btnBlue {
+    transition: none;
+  }
+}

@@ -26,7 +26,7 @@ const Navbar = () => {
       ? "navbarDetail"
       : pathname === '/404'
         ? "navbarHide"
-        : "navbar"}>
+        : "cusNavbar"}>
 
       <div style={pathname === path.home ? { padding: '28px  24px', visibility: 'hidden' } : { padding: '28px  24px', color: 'white' }} onClick={() => history.goBack()}>
         <div className="navbarActionBtn">
