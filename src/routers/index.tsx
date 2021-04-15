@@ -1,16 +1,16 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { path } from './path';
-import { Contact, ContactDetail, E404, FormContainer } from '../pages';
+import { Contact, ContactAdd, ContactDetail, ContactEdit, E404 } from '../pages';
 
 const IndexRouter = () => {
   return (
     <Switch>
       <Route exact path={path.add}>
-        <FormContainer />
+        <ContactAdd />
       </Route>
       <Route exact path={path.edit}>
-        <FormContainer />
+        <ContactEdit />
       </Route>
       <Route exact path={path.detail}>
         <ContactDetail />

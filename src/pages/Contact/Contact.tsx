@@ -9,6 +9,9 @@ const Contact = () => {
       <MetaDecorator title="Contact | Simple Contact" desc="Homepage of Simple Contact web app." />
 
       <ContactCard />
+      <ContactCard />
+      <ContactCard />
+      <ContactCard />
     </div>
   );
 };
