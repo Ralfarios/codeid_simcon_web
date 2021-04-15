@@ -5,7 +5,13 @@ class ContactAction {
   static addContact(value: any) {
     return async (next: any) => {
       try {
-        console.log(value);
+        const { data } = await axios({
+          method: 'POST',
+          url: '/contact',
+          data: value
+        });
+
+        return Swalert.toast('success', data.message);
       } catch (err) {
         const error = err.response.data.message;
         next({ type: 'ERROR', payload: error });
@@ -79,6 +85,8 @@ class ContactAction {
           url: `/contact/${contactId}`,
           data: value
         });
+
+        Swalert.toast('success', data.message);
 
         return next({ type: 'UPDATE_CONTACT', payload: data.data });
       } catch (err) {

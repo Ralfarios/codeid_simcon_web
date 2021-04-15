@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
 import Swalert from '../../components/helper/Swal';
+import MetaDecorator from '../../utils/helmet/MetaDecorator';
 
 import ContactAction from '../../utils/store/actions/contactAction';
 
@@ -12,7 +13,7 @@ const ContactEdit = () => {
   const dispatch: any = useDispatch();
   const history: any = useHistory();
   const { contactid }: any = useParams();
-  const { contact, isLoading } = useSelector((state: any) => state.contact);
+  const { contact } = useSelector((state: any) => state.contact);
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
@@ -39,6 +40,8 @@ const ContactEdit = () => {
 
   return (
     <div id="ContactEdit">
+      <MetaDecorator title="Edit Contact | Simple Contact" desc="Form for Edit Contact of Simple Contact web app." />
+
       <div className="contactEditFormCard">
         <form style={{ display: 'flex', flexDirection: 'column', width: '100%' }} onSubmit={(e) => handleSubmit(e)}>
           <h1 style={{ margin: 0, textAlign: 'center', fontSize: '1.6rem', marginBottom: 24, color: '#0d6efd' }}>Contact Information</h1>

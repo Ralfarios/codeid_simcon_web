@@ -1,9 +1,25 @@
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
+import MetaDecorator from '../../utils/helmet/MetaDecorator';
+import Swalert from '../../components/helper/Swal';
+
+import ContactAction from '../../utils/store/actions/contactAction';
+
 import './styles/contactAdd.css';
 
 const ContactAdd = () => {
-
+  const dispatch: any = useDispatch();
+  const history: any = useHistory();
   const handleSubmit = (e: any) => {
     e.preventDefault();
+
+    if (!e?.target?.firstName?.value) return Swalert.fire('Error!', 'Please fill the First Name!', 'error');
+    if (!e?.target?.lastName?.value) return Swalert.fire('Error!', 'Please fill the Last Name!', 'error');
+    if (!e?.target?.age?.value) return Swalert.fire('Error!', 'Please fill the Age!', 'error');
+    if (e?.target?.age?.value < 0 || e?.target?.age?.value > 100) return Swalert.fire('Error!', 'Age must be more than 0 and less than equal 100.', 'error');
+    if (!e?.target?.photo?.value) return e.target.photo.value = 'N/A';
+
     const value: any = {
       firstName: e?.target?.firstName?.value,
       lastName: e?.target?.lastName?.value,
@@ -11,11 +27,14 @@ const ContactAdd = () => {
       photo: e?.target?.photo?.value,
     };
 
-    return console.log(value);
+    dispatch(ContactAction.addContact(value));
+    return history.push(`/`);
   };
 
   return (
     <div id="ContactAdd">
+      <MetaDecorator title="Add Contact | Simple Contact" desc="Form for Add Contact of Simple Contact web app." />
+
       <div className="contactAddFormCard">
         <form style={{ display: 'flex', flexDirection: 'column', width: '100%' }} onSubmit={(e) => handleSubmit(e)}>
           <h1 style={{ margin: 0, textAlign: 'center', fontSize: '1.6rem', marginBottom: 24, color: '#0d6efd' }}>Contact Information</h1>
