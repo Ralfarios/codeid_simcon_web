@@ -21,9 +21,8 @@ const ContactDetail = () => {
 
   return (
     <div id="ContactDetail">
-      <MetaDecorator title="Contact Detail | SimCon" desc="A Page about Detailed information of contact" />
+      <MetaDecorator title={isLoading ? 'Contact Detail | Simple Contact' : `${contact.firstName} ${contact.lastName} | Simple Contact`} desc="A Page about Detailed information of contact" />
 
-      {/* <ContactDetailContainerSkeleton /> */}
       {isLoading
         ? <ContactDetailContainerSkeleton />
         : <ContactDetailContainer

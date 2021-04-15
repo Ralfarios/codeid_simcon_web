@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import MetaDecorator from '../../utils/helmet/MetaDecorator';
 import Swalert from '../../components/helper/Swal';
 
 import ContactAction from '../../utils/store/actions/contactAction';
@@ -32,6 +33,8 @@ const ContactAdd = () => {
 
   return (
     <div id="ContactAdd">
+      <MetaDecorator title="Add Contact | Simple Contact" desc="Form for Add Contact of Simple Contact web app." />
+
       <div className="contactAddFormCard">
         <form style={{ display: 'flex', flexDirection: 'column', width: '100%' }} onSubmit={(e) => handleSubmit(e)}>
           <h1 style={{ margin: 0, textAlign: 'center', fontSize: '1.6rem', marginBottom: 24, color: '#0d6efd' }}>Contact Information</h1>
