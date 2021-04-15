@@ -15,6 +15,16 @@ class Swalert {
   static fire(title: string, desc: string, icon: any) {
     return Swal.fire(title, desc, icon);
   };
+  static toast(icon: any, title: string) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      timer: 3000,
+    })
+
+    return Toast.fire({ icon, title });
+  }
 };
 
 export default Swalert;

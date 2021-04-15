@@ -23,7 +23,7 @@ const contactReducer = (state: any = init, action: any) => {
     case 'FETCH_CONTACT_BY_ID':
       return { ...state, contact: action.payload, isLoading: false, errors: null };
     case 'UPDATE_CONTACT':
-      return state;
+      return { ...state, contact: action.payload, isLoading: false, errors: null };
     default:
       return state;
   };
