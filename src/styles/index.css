@@ -143,6 +143,12 @@ button:focus:not(:focus-visible) {
   border-color: #f8f9fa;
 }
 
+.btnOutWhite:disabled, .btnOutWhite.disabled {
+  color: #000;
+  background-color: #f8f9fa65;
+  border-color: #f8f9fa;
+}
+
 .btnRed:hover {
   color: #fff;
   background-color: #bb2d3b;

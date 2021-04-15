@@ -28,7 +28,7 @@ const Navbar = () => {
         ? "navbarHide"
         : "cusNavbar"}>
 
-      <div style={pathname === path.home ? { padding: '28px  24px', visibility: 'hidden' } : { padding: '28px  24px', color: 'white' }} onClick={() => history.goBack()}>
+      <div style={pathname === path.home ? { padding: '28px  24px', visibility: 'hidden' } : { padding: '28px  24px', color: 'white' }} onClick={() => history.push(path.home)}>
         <div className="navbarActionBtn">
           <FiChevronLeft size={30} />
         </div>
