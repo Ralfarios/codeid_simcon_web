@@ -17,7 +17,7 @@ const ContactDetail = () => {
 
   useEffect(() => {
     dispatch(ContactAction.getContactById(contactid));
-  }, [dispatch]);
+  }, [contactid, dispatch]);
 
   return (
     <div id="ContactDetail">
