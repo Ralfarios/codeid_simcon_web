@@ -5,7 +5,7 @@ import { combineReducers } from 'redux';
 import contactReducer from './contactReducer';
 // Import reducer here
 
-const rootReducers: any = combineReducers({
+const rootReducers = combineReducers({
   contact: contactReducer
   // Name the reducer's State and target the imported reducer
 });

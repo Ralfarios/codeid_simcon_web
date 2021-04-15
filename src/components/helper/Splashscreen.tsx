@@ -1,7 +1,7 @@
 const Splashscreen = () => {
   return (
     <div id="Splashscreen">
-      <h1>SPLASH</h1>
+      <h1>Now Loading...</h1>
     </div>
   );
 };

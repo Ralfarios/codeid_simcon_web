@@ -1,15 +1,26 @@
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-const ContactCard = () => {
+const placeHolder: string = 'https://energies2050.org/wp-content/uploads/2017/01/beweship-contact-placeholder.jpg';
+
+interface ContactCardProps {
+  id: string,
+  age: number,
+  firstName: string,
+  lastName: string,
+  photo: string
+};
+
+const ContactCard: React.FC<ContactCardProps> = ({ id, age, firstName, lastName, photo }: ContactCardProps) => {
   const history = useHistory();
   return (
-    <div id="ContactCard" className="contactCard" onClick={() => history.push('/contact/123')}>
+    <div id="ContactCard" className="contactCard" onClick={() => history.push(`/contact/${id}`)}>
       <div className="contactAvaContainer">
-        <img src="https://i.pinimg.com/originals/ea/b8/60/eab860a9c45b720fbc527bd304e12a68.jpg" alt="" className="contactAva" />
+        <img src={photo === 'N/A' ? placeHolder : photo} alt="" className="contactAva" />
       </div>
       <div className="contactInfoContainer">
-        <h3 style={{ margin: 0, marginBottom: 4 }}>Mr Pussycat</h3>
-        <p style={{ margin: 0, color: '#888' }}>121 Years Old</p>
+        <h3 style={{ margin: 0, marginBottom: 4 }}>{firstName} {lastName}</h3>
+        <p style={{ margin: 0, color: '#888' }}>{age} Years Old</p>
       </div>
     </div>
   );
