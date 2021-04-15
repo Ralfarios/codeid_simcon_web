@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
+import Swalert from '../../../components/helper/Swal';
+
 interface ContactDetailContainerProps {
   id: string,
   firstName: string,
@@ -11,7 +13,19 @@ interface ContactDetailContainerProps {
 
 const ContactDetailContainer: React.FC<ContactDetailContainerProps> = ({ id, firstName, lastName, age, photo }: ContactDetailContainerProps) => {
   const history = useHistory();
-  const handleDelete = (id: string) => console.log('del' + id);
+  const handleDelete = (id: string) => {
+    Swalert.confirm('Are you sure?', 'You won\'t be able to revert this!', 'Yes')
+      .then((result: any) => {
+        if (result.isConfirmed) {
+          return Swalert.fire(
+            'Deleted!',
+            'Contact deleted successfully.',
+            'success'
+          );
+        };
+      });
+  };
+  
   return (
     <div className="contactDetailContainer">
       <div className="contactDetailAvaContainer">
