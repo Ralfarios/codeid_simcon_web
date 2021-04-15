@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Splashscreen from './components/helper/Splashscreen';
 import store from './utils/store';
 
 
@@ -13,7 +14,7 @@ import './styles/index.css';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Suspense fallback={<h1>Now Loading...</h1>}>
+      <Suspense fallback={Splashscreen}>
         <Provider store={store} >
           <App />
         </Provider>
